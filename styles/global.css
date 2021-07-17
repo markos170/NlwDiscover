@@ -25,6 +25,7 @@ html{
     --hover-blue: #5699FF;
     --hover-red: #EA4B65;
     --hover-grey: #8794A7;
+    --opacity-read:  #eaecf2;
     /*---1 rem = 16px--*/
     font-size: 62.5%;
 }
@@ -107,4 +108,17 @@ button.outlined,
 
 .content header img{
     width: 16.7rem;
+}
+
+/*** Conteúdo***/
+button.red,
+.button.red{
+    background: var(--red);
+    color: var(--white);
+} 
+
+button.grey,
+.button.grey{
+    background: var(--grey-light);
+    color: var(--grey-dark);
 }
