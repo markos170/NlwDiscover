@@ -1,0 +1,24 @@
+{
+  "name": "NlwDiscover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markos170/NlwDiscover.git"
+  },
+  "keywords": [],
+  "author": "primeiro projeto usando node.js para criar formularios de input para obter dados do usuário",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markos170/NlwDiscover/issues"
+  },
+  "homepage": "https://github.com/markos170/NlwDiscover#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
