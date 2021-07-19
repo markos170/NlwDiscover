@@ -1,5 +1,5 @@
 {
-  "name": " NlwDiscover ",
+  "name": "NlwDiscover",
   "version": "1.0.0",
   "description": "Primeiro projeto usando nodeJs, criando formularios de entrada de dados",
   "main": "src/server.js",
