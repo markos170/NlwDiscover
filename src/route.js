@@ -1,11 +1,12 @@
 const express = require('express')
-
+const QuestionController = require('./controllers/QuestionController.js')
+const RoomController = require('./controllers/RoomController')
 const route = express.Router()
 
-route.get('/', (req, res) => res.render("index"))
-route.get('/room', (req, res) => res.render("room"))
-route.get('/creat-pass', (req, res) => res.render("creat-pass"))
-//formato que o formulario de dentro da modal 
-//route.get('/room/:room/:question/:action', (req, res) => res.render("exemplo", {req}))
-
+route.get('/', (req, res) => res.render("index", {page: 'enter-room'}))
+route.get('/room/:room', (req, res) => res.render("room"))
+route.get('/creat-pass', (req, res) => res.render("index", {page: 'creat-pass'}))
+//formato que o formulario de dentro da modal tem que passar para index
+route.post('/question/:room/:question/:action', QuestionController.index)
+route.post('/creat-room', RoomController.creat)
 module.exports = route
