@@ -30,8 +30,8 @@
                 <img src="/images/logo.svg" alt="logo da pagina home" />
             </a>
             <div class="buttons">
-                <div class="button outlined" id="room-id" data-id="323243">
-                    #323243
+                <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+                    #<%= roomId %>
                     <img src="/images/copy.svg" alt="copiar número da sala">
                 </div>
                 <a href="#" class="button">
@@ -155,7 +155,7 @@
         <div class="modal">
             <h2>Excluir pergunta</h2>
             <p>Tem certeza que você desejda excluir esta pergunta</p>
-            <form action="/src/views/room.ejs" method="POST">
+            <form action="#" method="POST">
                 <label class="sr-only" for-id="password">Digite sua senha admin</label>
                 <input type="password"  id="password" name="password" placeholder="Digite sua senha">
 
