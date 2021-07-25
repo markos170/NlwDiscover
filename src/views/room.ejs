@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!----- Script----->
-    <script src="script/main.js" defer type="module"></script>
+    <script src="/script/main.js" defer type="module"></script>
 
 </head>
 
@@ -32,7 +32,7 @@
             <div class="buttons">
                 <div class="button outlined" id="room-id" data-id="<%= roomId %>">
                     #<%= roomId %>
-                    <img src="/images/copy.svg" alt="copiar número da sala">
+                        <img src="/images/copy.svg" alt="copiar número da sala">
                 </div>
                 <a href="#" class="button">
                     <img src="/images/users2.svg" alt="criar uma sala">
@@ -59,93 +59,58 @@
             <section id="questions">
                 <h2 class="sr-only">Perguntas da comunidade</h2>
                 <div class="questions">
+                    <% questions.forEach(questions=> {%>
 
-                    <div class="question-wrapper">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/images/user.svg" alt="Avatar">
+                        <div class="question-wrapper">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/images/user.svg" alt="Avatar">
+                                </div>
+                                <div class="question">
+                                    <p>
+                                        <%= questions.title %>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="question">
-                                <p>Qual a diferença entre função e metodo</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <a href="#" class="check" data-id="2">
-                                <img src="/images/check.svg" alt="check">
-                                Marcar como lida
+                            <div class="actions">
+                                <a href="#" class="check" data-id="<%= questions.id %>">
+                                    <img src="/images/check.svg" alt="check">
+                                    Marcar como lida
 
-                            </a>
-                            <a href="#" class="delete" data-id="2">
-                                <img src="/images/trash.svg" alt="trash">
-                                Excluir
-                            </a>
+                                </a>
+                                <a href="#" class="delete" data-id="<%= questions.id %> ">
+                                    <img src="/images/trash.svg" alt="trash">
+                                    Excluir
+                                </a>
 
-                        </div>
-                    </div>
-                    <div class="question-wrapper">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/images/user.svg" alt="Avatar">
-                            </div>
-                            <div class="question">
-                                <p>Qual a diferença entre função e metodo</p>
                             </div>
                         </div>
-                        <div class="actions">
-                            <a href="#" class="check" data-id="3">
-                                <img src="/images/check.svg" alt="check" >
-                                Marcar como lida
+                    <% }); %>
 
-                            </a>
-                            <a href="#" class="delete"  data-id="3">
-                                <img src="/images/trash.svg" alt="trash">
-                                Excluir
-                            </a>
+                    <% questionsRead.forEach(questionRead=> {%>
+                                
+                            <div class="question-wrapper read">
+                                    <div class="question-content">
+                                        <div class="user">
+                                            <img src="/images/user.svg" alt="Avatar">
+                                        </div>
+                                        <div class="question">
+                                            <p><%= questionRead.title  %> </p>
+                                        </div>
+                                    </div>
+                                    <div class="actions">
 
-                        </div>
-                    </div>
+                                        <a href="#" class="delete" data-id="<%= questionRead.id %> ">
+                                            <img src="/images/trash.svg" alt="trash">
+                                            Excluir
+                                        </a>
 
-                    <div class="question-wrapper">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/images/user.svg" alt="Avatar">
+                                    </div>
+                                
                             </div>
-                            <div class="question">
-                                <p>Qual a diferença entre função e metodo  e como chamalas dentro de um função condicional </p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <a href="#" class="check" data-id="4">
-                                <img src="/images/check.svg" alt="check" >
-                                Marcar como lida
 
-                            </a>
-                            <a href="#" class="delete" data-id="4">
-                                <img src="/images/trash.svg" alt="trash" >
-                                Excluir
-                            </a>
+                    <% }); %>
 
-                        </div>
-                    </div>
-
-                    <div class="question-wrapper read">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/images/user.svg" alt="Avatar">
-                            </div>
-                            <div class="question">
-                                <p>Qual a diferença entre função e metodo</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                
-                            <a href="#" class="delete" data-id="1">
-                                <img src="/images/trash.svg" alt="trash">
-                                Excluir
-                            </a>
-
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
@@ -157,7 +122,7 @@
             <p>Tem certeza que você desejda excluir esta pergunta</p>
             <form action="#" method="POST">
                 <label class="sr-only" for-id="password">Digite sua senha admin</label>
-                <input type="password"  id="password" name="password" placeholder="Digite sua senha">
+                <input type="password" id="password" name="password" placeholder="Digite sua senha">
 
                 <div class="buttons">
                     <div class="button grey cancel">Cancelar</div>
