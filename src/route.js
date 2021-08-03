@@ -8,8 +8,7 @@ route.get('/creat-pass', (req, res) => res.render("index", {page: 'creat-pass'})
 
 route.post('/creat-room', RoomController.creat)
 route.get('/room/:room', RoomController.open)
-
-
+route.post('/enterroom', RoomController.enter)
 
 
 //formato que o formulario de dentro da modal tem que passar para index
